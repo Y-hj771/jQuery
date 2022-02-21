@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            /* background-color: firebrick; */
+            margin: 100px auto; 
+            overflow: hidden;
+        }
+        .clothes,
+        .pic {
+            float: left;
+        }
+        .pic img {
+            width: 100px;
+            height: 100px;
+        }
+        li {
+            width: 100px;
+            height: 25px;
+            /* background-color:forestgreen; */
+            text-align: center;
+        }
+        li:hover {
+            background-color: fuchsia;
+        }
+    </style>
+    <script src="./jQuery-mini.js"></script>
+    <script>
+        $(function(){
+            $('.clothes li').mouseover(function(){
+                var index = $(this).index();
+                // $('.pic div').eq(index).show();
+                // $('.pic div').eq(index).siblings().hide();
+                //链式编程
+                $('.pic div').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul class="clothes">
+            <li><a href="#">大衣</a></li>
+            <li><a href="#">冬裙</a></li>
+            <li><a href="#">男包</a></li>
+            <li><a href="#">登山鞋</a></li>
+        </ul>
+        <div class="pic">
+            <div>
+                <a href="#"><img src="./淘宝图片/棉服.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./淘宝图片/冬裙.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./淘宝图片/男包.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./淘宝图片/登山鞋.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
