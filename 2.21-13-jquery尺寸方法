@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: firebrick;
+            border: 10px solid navy;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script src="./jQuery-mini.js"></script>
+    <script>
+        $(function(){
+            //width()/height() 获取设置元素 width和height大小
+            // console.log($('div').width());
+            // $('div').width(300)
+            
+            //innerWitdh()/innerHeight() 获取设置元素 width和height + padding 大小
+            console.log($('div').innerWidth());
+
+            //outerWidth() / outerHeight() 获取设置元素 width和height + padding + border 大小
+            console.log($('div').outerWidth());
+
+            //outerWidth(true) / outerHeight(true) 获取设置 width和height + padding +border + margin 大小
+            console.log($('div').outerWidth(true));
+            
+            })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
