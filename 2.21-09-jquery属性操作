@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-mini.js"></script>
+</head>
+<body>
+    <a href="https://www.baidu.com/?tn=88093251_34_hao_pg" title="你好">hahha</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index="3">我是盒子</div>
+    <span>123</span>
+    <script>
+        $(function(){
+            //element.prop('属性名'，'属性值')
+            // console.log($('a').prop('href'));
+            $('a').prop('title','你么好')
+            $('input').change(function(){
+                console.log($('input').prop('checked'));
+            })
+            //元素自定义属性 通过attr()获取
+            console.log($('div').attr('index'));
+            $('div').attr('index',4)
+
+            //数据缓存data() 这个里面是存放元素的内存里面
+            $('span').data('uname','andy');
+            console.log($('span').data('uname'));
+
+            //这个方法获取data-index h5自定义属性 第一个不用写data-  而且返回的是数字型
+            console.log($('div').data('index'));
+        })
+    </script>
+</body>
+</html>
