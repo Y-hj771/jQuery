@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-mini.js"></script>
+</head>
+<body>
+    <ul>
+        <li>原来的li</li>
+    </ul>
+    <div class="test">我是原先的div</div>
+    <script>
+        $(function(){
+            //创建元素
+            var li = $('<li>我是后来的</li>')
+
+            //添加元素
+            $('ul').append(li);//内部添加并且放到内容的最后面
+            // $('ul').prepend(li);//内部添加并且放到内容的最前面
+
+            //外部添加
+            var div = $('<div>我也是后来的</div>');
+            // $('.test').after(div);
+            $('.test').before(div);
+
+            //删除元素
+            // $('ul').remove();可以删除匹配的子元素 自杀(连同ul一起删除)
+            // $('ul').empty();可以删除匹配元素里面的子节点 孩子(删除里面内容)
+            $('ul').html('');//可以删除匹配元素里面的子节点 孩子(直接修改里面内容为空)
+        })
+    </script>
+</body>
+</html>
