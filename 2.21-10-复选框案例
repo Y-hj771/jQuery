@@ -13,8 +13,10 @@
             });
             
             //如果小复选框的被选中的个数等于2 大复选框就选中 否者全选按钮不选
+            //$('.list').length所有的小复选框的个数
+            //$('.list:checked').length被选中小复选框的个数
             $('.list').change(function(){
-                if($('.list:checked').length === 2){
+                if($('.list:checked').length === $('.list').length){
                     $('.all').prop('checked',true);
                 }else {
                     $('.all').prop('checked',false);
