@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .big {
+            position: relative;
+            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+            background-color: firebrick;
+        }
+        .small {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+    <script src="./jQuery-mini.js"></script>
+</head>
+<body>
+    <div class="big">
+        <div class="small"></div>
+    </div>
+    <script>
+        $(function() {
+            //获取设置距离文档的位置(偏移) offset
+            console.log($('.small').offset());
+            console.log($('.small').offset().top);
+            // $('.small').offset({
+            //     top:100,
+            //     left:100
+            // })
+
+            //position  获取距离带有定位父级位置(偏移) 如果没有定位的父级，则以文档为准
+            //这个方法只能获取方法，不能设置偏移量
+            console.log($('.small').position());
+        })
+    </script>
+</body>
+</html>
