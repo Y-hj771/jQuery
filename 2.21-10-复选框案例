@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-mini.js"></script>
+    <script>
+        $(function() {
+            $('.all').change(function(){
+                $('.list').prop('checked',$(this).prop('checked'));
+            });
+            
+            //如果小复选框的被选中的个数等于2 大复选框就选中 否者全选按钮不选
+            $('.list').change(function(){
+                if($('.list:checked').length === 2){
+                    $('.all').prop('checked',true);
+                }else {
+                    $('.all').prop('checked',false);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="checkbox" class="all">全选<br>
+    <input type="checkbox" class="list">1 <br>
+    <input type="checkbox" class="list">2
+</body>
+</html>
